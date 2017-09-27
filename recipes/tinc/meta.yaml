@@ -1,0 +1,38 @@
+{% set name = "tinc" %}
+{% set version = "1.0.32" %}
+{% set sha256 = "4db24feaff8db4bbb7edb7a4b8f5f8edc39b26eb5feccc99e8e67a6960c05587" %}
+
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+  
+
+source:
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: https://www.tinc-vpn.org/packages/{{ name }}-{{ version }}.tar.gz
+  sha256: {{ sha256 }}
+   
+build:
+  number: 0
+  skip: True  # [not linux]  
+
+requirements:
+  build:
+  run:
+
+test:
+  commands:
+    - test -f ${PREFIX}/sbin/tincd
+    - ${PREFIX}/sbin/tincd --help
+
+about:
+  home: http://www.tinc-vpn.org
+  license: GPL 2
+  license_family: GPL
+  summary: 'tinc is a Virtual Private Network (VPN) daemon that uses tunnelling and encryption to create a secure private network between hosts on the Internet.'
+  doc_url: https://www.tinc-vpn.org/docs/
+
+extra:
+  recipe-maintainers:
+    - axiros
