@@ -1,3 +1,10 @@
+# Tinc
+
+We added all headers here, incl. openssl. Have to check how this is done normally, did not find things like openssl-devel on condaforge.
+
+
+```
+
 [root@localhost tinc-1.0.32]# ./configure -h
 `configure' configures tinc 1.0.32 to adapt to many kinds of systems.
 
@@ -123,3 +130,5 @@ Use these variables to override the choices made by `configure' or to help
 it to find libraries and programs with nonstandard names/locations.
 
 Report bugs to the package provider.
+
+```
